@@ -1,8 +1,5 @@
 package org.example;
 
-import com.sun.jdi.event.StepEvent;
-
-import javax.swing.plaf.metal.MetalBorders;
 import java.sql.*;
 
 import static java.lang.IO.print;
