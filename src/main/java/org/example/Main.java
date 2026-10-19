@@ -20,4 +20,6 @@ void main(){
             Double.parseDouble(readln("\nInserisci il prezzo:\t")),
             Integer.parseInt(readln("\nInserisci la quantita' :\t"))
     );
+
+    database.selectAll("sushi_menu");
 }
