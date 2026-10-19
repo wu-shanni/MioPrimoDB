@@ -1,8 +1,8 @@
 package org.example;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
+import com.sun.jdi.event.StepEvent;
+
+import java.sql.*;
 
 public class Database {
     private static Database instance;           //singleton: per una det. classe esiste una e una sola istanza
@@ -29,9 +29,18 @@ public class Database {
             return false;
         }
 
-        String query = "INSERT INTO sushi_menu (pitto, prezzo, quantita) VALUES (?, ?, ?)";
+        String query = "INSERT INTO sushi_menu (piatto, prezzo, quantita) VALUES (?, ?, ?)";
 
+        try {
+            PreparedStatement statement = connection.prepareStatement(query);
+            statement.setString(1, piatto);
+            statement.setDouble(2, prezzo);
+            statement.setInt(3, quantita);
+            statement.execute();
 
+        } catch (SQLException e){
+            throw new RuntimeException(e);
+        }
 
     }
 
