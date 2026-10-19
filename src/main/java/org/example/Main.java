@@ -1,6 +1,7 @@
 import org.example.Database;
 import java.sql.SQLException;
 import static java.lang.IO.println;
+import static java.lang.IO.readln;
 
 void main(){
     Database database = null;
@@ -14,5 +15,9 @@ void main(){
     println("\nDatabase Connesso");
 
 
-    database.insertPiatto("Uramaki Miura", 5.5, 8);
+    database.insertPiatto(
+            readln("\nInserisci il piatto:\t"),
+            Double.parseDouble(readln("\nInserisci il prezzo:\t")),
+            Integer.parseInt(readln("\nInserisci la quantita' :\t"))
+    );
 }
