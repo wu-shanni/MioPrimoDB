@@ -18,4 +18,23 @@ public class Database {
         }
         return instance;
     }
+
+    public boolean insertPiatto(String piatto, double prezzo, int quantita){
+        //controllo connessione al database
+        try{
+            if(!connection.isValid(5)){
+                throw new RuntimeException("Connessione persa");
+            }
+        }catch (SQLException E){
+            return false;
+        }
+
+        String query = "INSERT INTO sushi_menu (pitto, prezzo, quantita) VALUES (?, ?, ?)";
+
+
+
+    }
+
+
+
 }
