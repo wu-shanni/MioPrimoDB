@@ -39,11 +39,8 @@ public class Database {
             statement.execute();
 
         } catch (SQLException e){
-            throw new RuntimeException(e);
+            return false;
         }
-
+        return true;
     }
-
-
-
 }
